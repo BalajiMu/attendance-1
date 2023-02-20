@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="description" content="Free Web tutorials" />
+	<meta name="keywords" content="HTML, CSS, JavaScript" />
+	<meta name="author" content="John Doe" />
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0" />
+	<title>ATTENDANCE</title>
+
+
+	<!--Font Awesome-->
+	<link rel="stylesheet" href=
+		"https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+		integrity=
+"sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+		crossorigin="anonymous" />
+
+	<!--Style CSS-->
+	<link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+	<center><h1 style="color:#5a43d9 ;">ATTENDANCE MANAGEMENT SYSTEM</h1></center>
+		<div class="logo">
+			<img src="logo.jpg"
+			style="width:140px;height:80px;">
+		</div>
+        <img src="img.png" width="800px" height="380px">
+	<div class="container">
+		<div class="text">
+			<h1>Sign in</h1>
+			<p>Stay updated on your professional world</p>
+		</div>
+		<div class="your-input">
+			<div class="input">
+				<input type="text" name="email"
+					id="email" required />
+				<label for="email">Email</label>
+			</div>
+			<div class="input">
+				<input type="password" name="password"
+					id="password" required />
+				<label for="password">
+					Password
+				</label>
+			</div>
+		</div>
+		<button onclick="validate()">Sign in</button>
+	</div>
+</body>
+<script> 
+    var attempt = 3;  
+    function validate(){ 
+    var email = document.getElementById("email").value; 
+    var password = document.getElementById("password").value; 
+    if(email ==""&& password==""){ 
+        alert("Email and Password cannot be Empty!!!"); 
+         return false; 
+    } 
+	if(email == "admin@gmail.com" && password == "admin@123"){
+	    window.location = "dashboard.html";
+		 return;
+    }
+    if ( email == "bm.becse@gmail.com" && password == "Balaji@123"){ 
+         window.location = "Mentordash.html"; 
+            return false; 
+    } 
+    else{ 
+    attempt --; 
+    alert("Given Email&Password does not match,Please check Again!!Remaining  "+attempt+" attempt more to login"); 
+    if( attempt == 0){ 
+    document.getElementById("email").disabled = true; 
+    document.getElementById("password").disabled = true; 
+    document.getElementById("signin").disabled = true; 
+    return false; 
+    } 
+    } 
+    } 
+    </script>
+</html>
